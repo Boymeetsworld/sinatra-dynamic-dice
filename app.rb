@@ -41,6 +41,18 @@ get("/dice/1/20") do
   erb(:one_twenty)
 end
 
+get("/dynamic/50/6") do
+  @rolls = []
+
+  50.times do
+    die = rand(1..6)
+
+    @rolls.push(die)
+  end
+
+  erb(:flexible)
+end
+
 get("/dice/5/4") do
   @rolls = []
 
